@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/volley_nav_graph"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="prime.projects.user_volley_get_post.fragments.HomeFragment"
+        android:label="Home"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_homeFragment_to_messageFragment"
+            app:destination="@id/messageFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/messageFragment"
+        android:name="prime.projects.user_volley_get_post.fragments.MessageFragment"
+        android:label="Message"
+        tools:layout="@layout/fragment_message" >
+        <action
+            android:id="@+id/action_messageFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+    </fragment>
+</navigation>
