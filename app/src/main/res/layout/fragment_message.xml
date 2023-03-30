@@ -7,6 +7,11 @@
         <variable
             name="messageFragment"
             type="prime.projects.user_volley_get_post.fragments.MessageFragment" />
+
+        <!-- Adding the adapter variable -->
+        <variable
+            name="hotAdapter"
+            type="prime.projects.user_volley_get_post.adapter.HotlineAdapter" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -15,15 +20,15 @@
         tools:context=".fragments.MessageFragment">
 
 
-        <TextView
+        <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/result_tv"
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:gravity="center"
-            android:text="@string/hello_blank_fragment"
-            android:textSize="17sp"
-            android:textStyle="bold"
-            android:textAllCaps="true"
+            tools:itemCount="3"
+            tools:listitem="@layout/volley_item_row"
+            android:adapter="@{hotAdapter}"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
             app:layout_constraintBottom_toTopOf="@+id/guideline"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -34,7 +39,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            app:layout_constraintGuide_begin="92dp" />
+            app:layout_constraintGuide_begin="278dp" />
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/button"
@@ -57,7 +62,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            app:layout_constraintGuide_begin="223dp" />
+            app:layout_constraintGuide_begin="397dp" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
